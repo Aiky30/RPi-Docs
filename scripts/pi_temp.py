@@ -2,9 +2,9 @@ import os
 import time
 from datetime import datetime
 
+#Lists for graph
 x_axis = []
 y_axis = []
-graph = []
 
 def get_cpu_temp():
     cpu_temp = os.popen("vcgencmd measure_temp").readline()
@@ -17,17 +17,14 @@ def get_time():
     return  current_time
                         
 while True:
-    #Only keep the latest 5 inputs
-    if len(x_axis) == 5 and len(y_axis) == 5:
-        #Ignore the room temp
-        multiplier = int(y_axis[0]) - 30
-        print("|" * multiplier)
-        del x_axis[0]
-        del y_axis[0]
-    else:
-        print("Getting data...")
     #Add latest date
     x_axis.append(get_time())
     y_axis.append(get_cpu_temp())
+    #Create elements for graph
+    latest_time = str(x_axis[-1]) + " " 
+    latest_temp = str(y_axis[-1]) + " "
+    temp_lines = str("|" * (int(y_axis[-1]) - 30))
+    #Print line for graph every .5 seconds
+    print(latest_time + latest_temp + temp_lines)
     time.sleep(0.5)
         
