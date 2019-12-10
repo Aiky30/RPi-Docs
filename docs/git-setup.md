@@ -27,3 +27,15 @@ Tell the ssh agent to use the key
 ```
 ssh-add /home/pi/.ssh/id_rsa
 ```
+
+## Configure upstream repositories
+
+Check the configuration
+```
+git remote -v
+```
+
+Add an upstream repository
+```
+git remote add upstream REPOSITORY_URL_TO_ADD.git
+```
