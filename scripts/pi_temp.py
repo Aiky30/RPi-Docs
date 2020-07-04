@@ -8,6 +8,7 @@ y_axis = []
 
 def get_cpu_temp():
     cpu_temp = os.popen("vcgencmd measure_temp").readline()
+    
     # Convert the temp read from the OS to a clean float
     return float(cpu_temp.replace("temp=","").replace("'C\n", ""))
 
