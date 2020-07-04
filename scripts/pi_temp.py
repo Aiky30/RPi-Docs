@@ -2,6 +2,9 @@ import os
 import time
 from datetime import datetime
 
+def check_os():
+    return os.uname()[4].startswith("arm") 
+
 def get_cpu_temp():
     cpu_temp = os.popen("vcgencmd measure_temp").readline()
     
@@ -13,7 +16,11 @@ def get_time():
     current_time = now.strftime("%H:%M:%S") # 24-Hour:Minute:Second
     return  current_time
                         
-while True:    
+while True:
+    if not check_os():
+        print("only rasbian os supported")
+        break
+
     temperature = get_cpu_temp()
     bar_size = int(temperature) - 30
     bar = str("|" * bar_size) 
@@ -22,5 +29,4 @@ while True:
         time=get_time(), temp=temperature, graph=bar
     ))
     
-    time.sleep(0.5)
-        
+    time.sleep(0.5)   
