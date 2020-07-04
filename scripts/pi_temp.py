@@ -2,10 +2,6 @@ import os
 import time
 from datetime import datetime
 
-#Lists for graph
-x_axis = []
-y_axis = []
-
 def get_cpu_temp():
     cpu_temp = os.popen("vcgencmd measure_temp").readline()
     
