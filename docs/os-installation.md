@@ -5,7 +5,7 @@
 2. Check the file against the checksum:
 
 ```shell
-sha256sum Downloads/2023-12-05-raspios-bookworm-arm64-full.img
+sha256sum ~/Downloads/2023-12-05-raspios-bookworm-arm64-full.img.xz
 ```
 
 3. Plug the SD card into a USB card reader attached to an Ubuntu machine. 
