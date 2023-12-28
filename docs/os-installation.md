@@ -8,9 +8,9 @@
 sha256sum Downloads/2023-12-05-raspios-bookworm-arm64-full.img
 ```
 
-4. Plug the SD card into a USB card reader attached to an Ubuntu machine. 
+3. Plug the SD card into a USB card reader attached to an Ubuntu machine. 
 
-5. If it's a .xz file, you will need to extract it
+4. If it's a .xz file, you will need to extract it
 
 ```shell
 unxz ~/Downloads/2023-12-05-raspios-bookworm-arm64-full.img.xz
