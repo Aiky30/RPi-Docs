@@ -1,10 +1,17 @@
 ## Preparing an image
 
-1. Download the OS of choice. 
+1. Download the OS of choice.
 
-2. Plug the SD card into a USB card reader attached to an Ubuntu machine. 
+2. Check the file against the checksum:
 
-3. If it's a .xz file, you will need to extract it
+```shell
+sha256sum Downloads/2023-12-05-raspios-bookworm-arm64-full.img
+```
+
+4. Plug the SD card into a USB card reader attached to an Ubuntu machine. 
+
+5. If it's a .xz file, you will need to extract it
+
 ```shell
 unxz ~/Downloads/2023-12-05-raspios-bookworm-arm64-full.img.xz
 ```
